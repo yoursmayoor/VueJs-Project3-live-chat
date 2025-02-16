@@ -7,17 +7,17 @@
     </div>
     <button @click="handleSignout">Logout</button>
   </nav>
-  <p class="error">{{error}}</p>
+  <p v-if="error" class="error">{{error}}</p>
 </template>
 
 <script>
 // import {useRouter} from 'vue-router'
 import useSignout from '../composibles/useSignout';
-import useUsesrInfo from '../composibles/useUsesrInfo';
+import useUserInfo from '../composibles/useUserInfo';
 export default {
     setup(){
         const {error, signout} = useSignout();
-        const {user} = useUsesrInfo();
+        const {user} = useUserInfo();
 
         const handleSignout = async () => {
             console.log("Heet therer")
